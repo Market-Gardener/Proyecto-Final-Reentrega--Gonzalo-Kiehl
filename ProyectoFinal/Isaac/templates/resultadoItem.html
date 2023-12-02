@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %} Resultado {% endblock %}
+
+{% block content %}
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-4 bg-body-tertiary">
+                <p>Estas Buscando: <strong>{{nombre}}</strong></p>
+                {% if item %}
+                    <p>Items encontrados: {{item|length}} items</p>
+                    <ul>
+                        {% for i in item %}
+                            <li>
+                                Item: <strong>{{i.nombre}}</strong> &nbsp; Precio: <strong>{{i.precio}}</strong>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p style="color: red;">{{mensaje}}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

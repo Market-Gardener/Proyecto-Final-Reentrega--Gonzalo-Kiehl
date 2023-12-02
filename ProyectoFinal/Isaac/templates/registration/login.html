@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %} login {% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-5 bg-body-tertiary">
+            <h1>Iniciar Sesion</h1>
+            <form action="/isaac/" method="POST">{% csrf_token %}
+                <input type="username" name="username" id="" placeholder="Nombre de Usuario">
+                <br>
+                <input type="password" name="password" id="" placeholder="Contrasena">
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

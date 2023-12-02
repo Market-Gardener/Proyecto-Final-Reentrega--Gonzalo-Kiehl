@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block title %} {{ titulo }} {% endblock %}
+
+{% block content %}
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-8">
+            </div>
+            <div class="col-md-10 bg-body-tertiary">
+                <h2>Listado de Items</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Items</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in items %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{c.nombre}}</td>
+                                    <td>{{c.precio}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
